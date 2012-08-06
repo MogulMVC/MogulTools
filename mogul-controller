@@ -1,0 +1,47 @@
+#!/usr/bin/perl
+
+use Term::ANSIColor;
+
+#Errors
+if(!@ARGV[0]){
+  print color 'red';
+  print "error";
+  print color 'reset';
+  print " - no controller name\n";
+  exit 1;
+}
+
+if(!@ARGV[1]){
+  print color 'yellow';
+  print "warning";
+  print color 'reset';
+  print " - controller should have one function\n          adding index function by default\n";
+  @ARGV[1] = "index";
+}
+
+#Get the controller name
+$controller = @ARGV[0];
+
+#Create the file
+open CONTROLLER, ">".$controller.".php" or die $!;
+
+#Start the controller class
+print CONTROLLER "<?php \n\nclass ".@ARGV[0]."{";
+
+#Define the functions array
+shift(@ARGV);
+@functions_array = @ARGV;
+
+#Create the controllers functions
+foreach(@functions_array){
+  print CONTROLLER "\n\n  function ".$_."(){\n\n  }";
+}
+
+#End the controller class
+print CONTROLLER "\n\n}";
+
+#Output success
+print color 'green';
+print "created";
+print color 'reset';
+print " controller ".$controller.".php\n";
