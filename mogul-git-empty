@@ -1,0 +1,4 @@
+#!/bin/bash
+
+#Add .gitempty files to empty folders
+find . -type d -empty -exec touch {}/.gitempty \;
