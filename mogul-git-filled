@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#Remove all .gitempty files
+find . -name ".gitempty" -exec rm -rf {} \;
+
+#Add .gitempty files to empty folders
+find . -type d -empty -exec touch {}/.gitempty \;
