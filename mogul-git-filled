@@ -1,7 +1,13 @@
-#!/bin/bash
+#!/usr/bin/perl
+
+use Term::ANSIColor;
 
 #Remove all .gitempty files
-find . -name ".gitempty" -exec rm -rf {} \;
+system('find . -name ".gitempty" -exec rm -rf {} \;');
 
 #Add .gitempty files to empty folders
-find . -type d -empty -exec touch {}/.gitempty \;
+system('find . -type d -empty -exec touch {}/.gitempty \;');
+
+print color 'green';
+print "Complete\n";
+print color 'reset';
