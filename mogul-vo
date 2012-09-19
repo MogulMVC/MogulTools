@@ -20,13 +20,13 @@ if(!@ARGV[1]){
 }
 
 #Get the value object name
-$valueObject = @ARGV[0];
+$valueObject = ucfirst(@ARGV[0]);
 
 #Create the file
 open VALUEOBJECT, ">".$valueObject.".php" or die $!;
 
 #Start the value object class
-print VALUEOBJECT "<?php \n\nclass ".@ARGV[0]."{";
+print VALUEOBJECT "<?php \n\nclass ".$valueObject." {";
 
 #Define the properties array
 shift(@ARGV);
@@ -37,11 +37,11 @@ print VALUEOBJECT "\n";
 
 #Create the value objects properties
 foreach(@properties_array){
-  print VALUEOBJECT "\n  public \$$_;";
+  print VALUEOBJECT "\n	public \$$_;";
 }
 
 #End the value object class
-print VALUEOBJECT "\n\n}";
+print VALUEOBJECT "\n\n}\n";
 
 print color 'green';
 print "created";

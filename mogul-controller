@@ -20,13 +20,13 @@ if(!@ARGV[1]){
 }
 
 #Get the controller name
-$controller = @ARGV[0];
+$controller = ucfirst(@ARGV[0]);
 
 #Create the file
 open CONTROLLER, ">".$controller.".php" or die $!;
 
 #Start the controller class
-print CONTROLLER "<?php \n\nclass ".@ARGV[0]."{";
+print CONTROLLER "<?php \n\nclass ".$controller." {";
 
 #Define the functions array
 shift(@ARGV);
@@ -34,11 +34,11 @@ shift(@ARGV);
 
 #Create the controllers functions
 foreach(@functions_array){
-  print CONTROLLER "\n\n  function ".$_."(){\n\n  }";
+  print CONTROLLER "\n\n	function ".$_."() {\n\n	}";
 }
 
 #End the controller class
-print CONTROLLER "\n\n}";
+print CONTROLLER "\n\n}\n";
 
 #Output success
 print color 'green';

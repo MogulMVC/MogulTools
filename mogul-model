@@ -23,13 +23,13 @@ if(!@ARGV[1]){
 }
 
 #Get the model name
-$model = @ARGV[0];
+$model = ucfirst(@ARGV[0]);
 
 #Create the file
 open MODEL, ">".$model.".php" or die $!;
 
 #Start the model class
-print MODEL "<?php \n\nclass ".@ARGV[0]."{";
+print MODEL "<?php \n\nclass ".$model." {";
 
 #Define the functions array
 shift(@ARGV);
@@ -37,11 +37,11 @@ shift(@ARGV);
 
 #Create the models functions
 foreach(@functions_array){
-  print MODEL "\n\n  public static function ".$_."(){\n\n  }";
+  print MODEL "\n\n	public static function ".$_."() {\n\n	}";
 }
 
 #End the model class
-print MODEL "\n\n}";
+print MODEL "\n\n}\n";
 
 #Output success
 print color 'green';
