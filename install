@@ -1,6 +1,11 @@
 #!/bin/bash
 
-sudo mv bin/* /usr/bin/
+sudo cp bin/* /usr/bin/
 
-sudo mkdir /opt/mogul/
-sudo mv resource/Mogul.tar.gz /opt/mogul/
+if [ ! -d /opt/mogul/ ]; then
+    sudo mkdir /opt/mogul/
+fi
+
+sudo cp resource/Mogul.tar.gz /opt/mogul/
+
+echo "complete"
