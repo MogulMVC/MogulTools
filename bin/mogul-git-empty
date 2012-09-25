@@ -9,5 +9,5 @@ system('find . -name ".gitempty" -exec rm -rf {} \;');
 system('find . -type d -empty -exec touch {}/.gitempty \;');
 
 print color 'green';
-print "Complete\n";
+print "complete\n";
 print color 'reset';

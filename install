@@ -1,0 +1,6 @@
+#!/bin/bash
+
+sudo mv bin/* /usr/bin/
+
+sudo mkdir /opt/mogul/
+sudo mv resource/Mogul.tar.gz /opt/mogul/
