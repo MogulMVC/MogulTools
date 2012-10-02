@@ -23,7 +23,7 @@ if(!@ARGV[1]){
 }
 
 #Get the model name
-$model = ucfirst(@ARGV[0]);
+$model = ucfirst(@ARGV[0]).'Model';
 
 #Create the file
 open MODEL, ">".$model.".php" or die $!;

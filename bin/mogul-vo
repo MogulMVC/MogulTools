@@ -20,7 +20,7 @@ if(!@ARGV[1]){
 }
 
 #Get the value object name
-$valueObject = ucfirst(@ARGV[0]);
+$valueObject = ucfirst(@ARGV[0]).'VO';
 
 #Create the file
 open VALUEOBJECT, ">".$valueObject.".php" or die $!;
