@@ -4,19 +4,19 @@ use Term::ANSIColor;
 
 #Errors
 if(!@ARGV[0]){
-  print color 'red';
-  print "error";
-  print color 'reset';
-  print " - no value object name\n";
-  exit 1;
+print color 'red';
+print "error";
+print color 'reset';
+print " - no value object name\n";
+exit 1;
 }
 
 if(!@ARGV[1]){
-  print color 'red';
-  print "error";
-  print color 'reset';
-  print " - value object requires at least one property\n";
-  exit 1;
+print color 'red';
+print "error";
+print color 'reset';
+print " - value object requires at least one property\n";
+exit 1;
 }
 
 #Get the value object name
@@ -37,7 +37,7 @@ print VALUEOBJECT "\n";
 
 #Create the value objects properties
 foreach(@properties_array){
-  print VALUEOBJECT "\n	public \$$_;";
+print VALUEOBJECT "\n	public \$$_;";
 }
 
 #End the value object class

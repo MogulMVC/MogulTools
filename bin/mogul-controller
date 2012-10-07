@@ -34,7 +34,24 @@ shift(@ARGV);
 
 #Create the controllers functions
 foreach(@functions_array){
-  print CONTROLLER "\n\n	function ".$_."() {\n\n	}";
+
+  my @subpage = split('--', $_);
+
+  #If a view is defined
+  if(@subpage[1]){
+  
+    #If the first part is not defined it is an index page
+    if(!@subpage[0]){
+      @subpage[0] = 'index';
+    }
+  
+    print CONTROLLER "\n\n	function ".@subpage[0]."() {\n		MLoad::view('".@subpage[1].".php');\n	}";
+  }
+  #If a view is not defined
+  else{
+    print CONTROLLER "\n\n	function ".$_."() {\n\n	}";
+  }
+  
 }
 
 #End the controller class
