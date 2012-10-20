@@ -9,10 +9,9 @@ $view = lc(@ARGV[0]);
 open VIEW, ">".$view.".php" or die $!;
 
 #Start the view class
-print VIEW '<div id="MToolBarPlaceholder"></div>';
-print VIEW '<nav id="MToolBar">';
-print VIEW "\n";
-print VIEW '</nav>';
+print VIEW '<div id="MToolBarPlaceholder"></div>' . "\n";
+print VIEW '<nav id="MToolBar">' . "\n\n";
+print VIEW '</nav>' . "\n\n";
 
 print VIEW '<h1>' . $view . '</h1>';
 
