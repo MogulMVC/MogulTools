@@ -16,8 +16,8 @@ if(!@ARGV[1]){
   print "warning";
   print color 'reset';
   print " - model should have one function\n adding read, write, update, and delete functions by default\n";
-  @ARGV[1] = "read";
-  @ARGV[2] = "write";
+  @ARGV[1] = "create";
+  @ARGV[2] = "read";
   @ARGV[3] = "update";
   @ARGV[4] = "delete";
 }

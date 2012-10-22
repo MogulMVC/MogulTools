@@ -46,6 +46,7 @@ foreach(@functions_array){
     }
   
     print CONTROLLER "\n\n	function ".@subpage[0]."() {\n		MLoad::view('".@subpage[1].".php');\n	}";
+    
   }
   #If a view is not defined
   else{
