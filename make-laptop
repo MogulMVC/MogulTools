@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Copy the project tar
+cd ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ MVC/Framework/
+tar cfvz Mogul.tar.gz application/ framework/ .htaccess index.php
+rm ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ MVC/Tools/resource/*
+mv Mogul.tar.gz ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ MVC/Tools/resource/
+
+# Rename the perl files
+cp ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ MVC/Tools/src/mogul-controller.pl ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ MVC/Tools/bin/mogul-controller
+cp ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ MVC/Tools/src/mogul-git-empty.pl ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ MVC/Tools/bin/mogul-git-empty
+cp ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ MVC/Tools/src/mogul-icon.pl ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ MVC/Tools/bin/mogul-icon
+cp ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ MVC/Tools/src/mogul-model-ar.pl ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ MVC/Tools/bin/mogul-model-ar
+cp ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ MVC/Tools/src/mogul-model-pdo.pl ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ MVC/Tools/bin/mogul-model-pdo
+cp ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ MVC/Tools/src/mogul-project.pl ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ MVC/Tools/bin/mogul-project
+cp ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ MVC/Tools/src/mogul-vo.pl ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ MVC/Tools/bin/mogul-vo
+
+# Make the executable
+chmod 777 ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ MVC/Tools/bin/*

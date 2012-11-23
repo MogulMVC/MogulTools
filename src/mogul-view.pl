@@ -3,10 +3,10 @@
 use Term::ANSIColor;
 
 #Get the controller name
-$view = lc(@ARGV[0]);
+$view = lc( @ARGV[0] );
 
 #Create the file
-open VIEW, ">".$view.".php" or die $!;
+open VIEW, ">" . $view . ".php" or die $!;
 
 #Start the view class
 print VIEW '<div id="MToolBarPlaceholder"></div>' . "\n";
@@ -19,4 +19,4 @@ print VIEW '<h1>' . $view . '</h1>';
 print color 'green';
 print "created";
 print color 'reset';
-print " controller ".$view.".php\n";
+print " controller " . $view . ".php\n";
