@@ -7,13 +7,13 @@ rm /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mo
 mv Mogul.tar.gz /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ MVC/Tools/resource/
 
 # Rename the perl files
-cp src/mogul-controller.pl bin/mogul-controller
-cp src/mogul-git-empty.pl bin/mogul-git-empty
-cp src/mogul-icon.pl bin/mogul-icon
-cp src/mogul-model-ar.pl bin/mogul-model-ar
-cp src/mogul-model-pdo.pl bin/mogul-model-pdo
-cp src/mogul-project.pl bin/mogul-project
-cp src/mogul-vo.pl bin/mogul-vo
+cp /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ MVC/Tools/src/mogul-controller.pl /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ MVC/Tools/bin/mogul-controller
+cp /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ MVC/Tools/src/mogul-git-empty.pl /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ MVC/Tools/bin/mogul-git-empty
+cp /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ MVC/Tools/src/mogul-icon.pl /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ MVC/Tools/bin/mogul-icon
+cp /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ MVC/Tools/src/mogul-model-ar.pl /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ MVC/Tools/bin/mogul-model-ar
+cp /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ MVC/Tools/src/mogul-model-pdo.pl /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ MVC/Tools/bin/mogul-model-pdo
+cp /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ MVC/Tools/src/mogul-project.pl /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ MVC/Tools/bin/mogul-project
+cp /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ MVC/Tools/src/mogul-vo.pl /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ MVC/Tools/bin/mogul-vo
 
 # Make the executable
-chmod 777 bin/*
+chmod 777 /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ MVC/Tools/bin/*
