@@ -12,14 +12,11 @@ if ( !@ARGV[0] ) {
 }
 
 if ( !@ARGV[1] ) {
-	print color 'yellow';
-	print "warning";
+	print color 'red';
+	print "error";
 	print color 'reset';
-	print " - model should have one function\n adding read, write, update, and delete functions by default\n";
-	@ARGV[1] = "create";
-	@ARGV[2] = "read";
-	@ARGV[3] = "update";
-	@ARGV[4] = "delete";
+	print " - please specify the table to use as a second parameter\n";
+	exit 1;
 }
 
 #Get the model name
@@ -29,15 +26,20 @@ $model = ucfirst( @ARGV[0] ) . 'Model';
 open MODEL, ">" . $model . ".php" or die $!;
 
 #Start the model class
-print MODEL "<?php \n\nclass " . $model . " {";
+print MODEL "<?php \n\nMLoad::php_framework('core/db/MActiveRecord'); \n\nclass " . $model . " extends MActiveRecord {";
+
+print MODEL "\n\n static \$table = '" . @ARGV[1] . "';";
 
 #Define the functions array
+shift(@ARGV);
 shift(@ARGV);
 @functions_array = @ARGV;
 
 #Create the models functions
-foreach (@functions_array) {
-	print MODEL "\n\n	public static function " . $_ . "() {\n\n	}";
+if (functions_array) {
+	foreach (@functions_array) {
+		print MODEL "\n\n	public static function " . $_ . "() {\n\n	}";
+	}
 }
 
 #End the model class

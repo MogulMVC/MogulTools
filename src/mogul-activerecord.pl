@@ -26,7 +26,7 @@ $model = ucfirst( @ARGV[0] ) . 'Model';
 open MODEL, ">" . $model . ".php" or die $!;
 
 #Start the model class
-print MODEL "<?php \n\nclass " . $model . " extends MActiveRecord {";
+print MODEL "<?php \n\nMLoad::php_framework('core/db/MActiveRecord'); \n\nclass " . $model . " extends MActiveRecord {";
 
 print MODEL "\n\n static \$table = '" . @ARGV[1] . "';";
 
@@ -50,4 +50,3 @@ print color 'green';
 print "created";
 print color 'reset';
 print " model " . $model . ".php\n";
-print "Be sure to autoload core/db/MActiveRecord\n";
