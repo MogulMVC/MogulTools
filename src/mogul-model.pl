@@ -2,8 +2,8 @@
 
 use Term::ANSIColor;
 
-#Errors
-if ( !@ARGV[0] ) {
+#Check if the model name has been specified
+if ( !$ARGV[0] ) {
 	print color 'red';
 	print "error";
 	print color 'reset';
@@ -11,19 +11,19 @@ if ( !@ARGV[0] ) {
 	exit 1;
 }
 
-if ( !@ARGV[1] ) {
+if ( !$ARGV[1] ) {
 	print color 'yellow';
 	print "warning";
 	print color 'reset';
 	print " - model should have one function\n adding read, write, update, and delete functions by default\n";
-	@ARGV[1] = "create";
-	@ARGV[2] = "read";
-	@ARGV[3] = "update";
-	@ARGV[4] = "delete";
+	$ARGV[1] = "create";
+	$ARGV[2] = "read";
+	$ARGV[3] = "update";
+	$ARGV[4] = "delete";
 }
 
 #Get the model name
-$model = ucfirst( @ARGV[0] ) . 'Model';
+$model = ucfirst( $ARGV[0] ) . 'Model';
 
 #Create the file
 open MODEL, ">" . $model . ".php" or die $!;

@@ -3,7 +3,7 @@
 use Term::ANSIColor;
 
 #Errors
-if ( !@ARGV[0] ) {
+if ( !$ARGV[0] ) {
 	print color 'red';
 	print "error";
 	print color 'reset';
@@ -11,7 +11,7 @@ if ( !@ARGV[0] ) {
 	exit 1;
 }
 
-if ( !@ARGV[1] ) {
+if ( !$ARGV[1] ) {
 	print color 'red';
 	print "error";
 	print color 'reset';
@@ -20,7 +20,7 @@ if ( !@ARGV[1] ) {
 }
 
 #Get the value object name
-$valueObject = ucfirst( @ARGV[0] ) . 'VO';
+$valueObject = ucfirst( $ARGV[0] ) . 'VO';
 
 #Create the file
 open VALUEOBJECT, ">" . $valueObject . ".php" or die $!;

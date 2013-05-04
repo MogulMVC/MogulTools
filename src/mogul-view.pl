@@ -2,8 +2,17 @@
 
 use Term::ANSIColor;
 
-#Get the controller name
-$view = lc( @ARGV[0] );
+#Check if the view name has been specified
+if ( !$ARGV[0] ) {
+	print color 'red';
+	print "error";
+	print color 'reset';
+	print " - no view name\n";
+	exit 1;
+}
+
+#Get the view name
+$view = lc( $ARGV[0] );
 
 #Create the file
 open VIEW, ">" . $view . ".php" or die $!;

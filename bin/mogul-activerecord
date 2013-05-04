@@ -2,8 +2,8 @@
 
 use Term::ANSIColor;
 
-#Errors
-if ( !@ARGV[0] ) {
+#Check if the model name has been specified
+if ( !$ARGV[0] ) {
 	print color 'red';
 	print "error";
 	print color 'reset';
@@ -11,7 +11,8 @@ if ( !@ARGV[0] ) {
 	exit 1;
 }
 
-if ( !@ARGV[1] ) {
+#Check if the model table has been specified
+if ( !$ARGV[1] ) {
 	print color 'red';
 	print "error";
 	print color 'reset';
@@ -20,15 +21,19 @@ if ( !@ARGV[1] ) {
 }
 
 #Get the model name
-$model = ucfirst( @ARGV[0] ) . 'Model';
+$model = ucfirst( $ARGV[0] ) . 'Model';
 
 #Create the file
 open MODEL, ">" . $model . ".php" or die $!;
 
 #Start the model class
-print MODEL "<?php \n\nMLoad::php_framework('core/db/MActiveRecord'); \n\nclass " . $model . " extends MActiveRecord {";
-
-print MODEL "\n\n static \$table = '" . @ARGV[1] . "';";
+print MODEL "<?php";
+print MODEL "\n\n";
+print MODEL "MLoad::php_framework('core/db/MActiveRecord');";
+print MODEL "\n\n";
+print MODEL "class " . $model . " extends MActiveRecord {";
+print MODEL "\n\n";
+print MODEL "	public static \$table = '" . $ARGV[1] . "';";
 
 #Define the functions array
 shift(@ARGV);
@@ -36,14 +41,18 @@ shift(@ARGV);
 @functions_array = @ARGV;
 
 #Create the models functions
-if (functions_array) {
+if (@functions_array) {
 	foreach (@functions_array) {
-		print MODEL "\n\n	public static function " . $_ . "() {\n\n	}";
+		print MODEL "\n\n";
+		print MODEL "	public function " . $_ . "() {";
+		print MODEL "\n\n";
+		print MODEL "	}";
 	}
 }
 
 #End the model class
-print MODEL "\n\n}\n";
+print MODEL "\n\n";
+print MODEL "}\n";
 
 #Output success
 print color 'green';
