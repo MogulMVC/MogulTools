@@ -33,7 +33,12 @@ print "Creating 144x144 precomposed Apple icon\n";
 system( 'convert ' . $ARGV[0] . ' -resize 144x144 apple-touch-icon-144x144-precomposed.png' );
 
 #Create favicon
-print "Creating 16x16 favicon\n";
-system( 'convert ' . $ARGV[0] . ' -resize 16x16 favicon.ico' );
+print "Creating multi resolution favicon\n";
+system( 'convert ' . $ARGV[0] . ' \
+  \( -clone 0 -resize 16x16 \) \
+  \( -clone 0 -resize 32x32 \) \
+  \( -clone 0 -resize 48x48 \) \
+  \( -clone 0 -resize 64x64 \) \
+  -delete 0 favicon.ico');
 
 print color 'reset';
