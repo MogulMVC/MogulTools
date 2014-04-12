@@ -1,3 +1,14 @@
-Mogul MVC Tools are a collection of tools designed to make development of Mogul MVC projects easier.
+MogulTools
+---
 
-The currently release works on Linux and OS X. I am not supporting Windows.
+MogulTools is a collection of tools designed to make development of MogulMVC projects easier.
+
+These tools work on Linux and OS X. Windows is not supported.
+
+Author
+---
+Alan James: [alanjames1987@gmail.com](mailto:alanjames1987@gmail.com)
+
+License
+---
+Licensed under [MIT](http://mogulmvc.com/general/license).
